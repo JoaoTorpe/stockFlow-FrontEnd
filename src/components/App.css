@@ -5,4 +5,9 @@ box-sizing: border-box;
 .appTopBar{
     height: 150px;
     background-color: #5227CA;
+    display: flex;
+    padding-bottom: 10px;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-end;
 }
