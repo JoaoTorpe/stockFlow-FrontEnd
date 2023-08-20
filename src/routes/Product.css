@@ -1,0 +1,10 @@
+.productContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    min-width: 950px;
+    border: solid red;
+    margin: auto;
+
+}

@@ -1,8 +1,9 @@
 import React from 'react'
-
+import "./Product.css"
+import ProductLabel from '../components/ProductLabel'
 const Product = () => {
   return (
-    <div>Product</div>
+    <div className='productContainer'><ProductLabel/></div>
   )
 }
 

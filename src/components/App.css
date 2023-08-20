@@ -11,3 +11,10 @@ box-sizing: border-box;
     justify-content: center;
     align-items: flex-end;
 }
+
+section{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
