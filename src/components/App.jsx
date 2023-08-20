@@ -1,7 +1,7 @@
 import React from "react"
 import "./App.css"
 import {Button}  from "./Button"
-
+import {Outlet} from "react-router-dom"
 export function App(){
 return <div>
 <div className="appTopBar">
@@ -9,6 +9,8 @@ return <div>
     <Button Name="Insights"/>
     <Button Name="Suplliers"/>
 </div>
+
+<section><Outlet/></section>
 
 </div>
 
