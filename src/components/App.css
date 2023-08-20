@@ -1,0 +1,8 @@
+*{
+margin: 0;
+box-sizing: border-box;
+}
+.appTopBar{
+    height: 150px;
+    background-color: #5227CA;
+}
