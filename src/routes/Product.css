@@ -1,10 +1,15 @@
 .productContainer{
+   
+    position: relative;
+    top: 100px;
+    overflow: scroll;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+   
     align-items: center;
-    min-height: 400px;
+    height: 400px;
     min-width: 950px;
-    border: solid red;
     margin: auto;
 
 }
