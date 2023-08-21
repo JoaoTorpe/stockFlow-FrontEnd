@@ -10,9 +10,19 @@
 .label ul{
 display: flex;
 gap: 1rem;
+width: 100%;
+
 }
 
 .label ul li{
 list-style: none;
+}
 
+button:hover{
+cursor: pointer;
+}
+
+.btnContainer{
+    position: relative;
+    left: 50px;
 }
