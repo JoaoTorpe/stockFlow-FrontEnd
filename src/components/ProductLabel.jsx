@@ -8,7 +8,7 @@ const ProductLabel = (props) => {
         <li>Name: {props.name} |</li>
         <li>Price: R${props.price} |</li>
         <li>Quantity: {props.quantity}|</li>
-        <li>Category: {props.categorie} |</li>
+        <li>Category: {props.category} |</li>
         <li>Supplier: {props.supplier} |</li>
         <li>Total Value: R${props.totalValue}</li>
         <li className='btnContainer' > <button className='editBtn' >Edit</button>  <button className='deleteBtn' >Delete</button>  </li>
