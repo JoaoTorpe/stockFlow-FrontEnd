@@ -26,10 +26,16 @@ const Product = () => {
           <td>{props.category}</td>
           <td>{props.supplie ? props.supplie : 'N/A' }</td>
           <td>{"R$ "+props.quantity * props.price}</td>
-          <th> <button className='delBtn Btn ' >Delete</button></th>
+          <th> <button onClick={(event)=>deleteItem(props.id)}  className='delBtn Btn'>Delete</button></th>
           </tr>
     
     </table>
+    }
+
+    function deleteItem(id){
+      axios.delete("http://localhost:8080/products/"+id)
+      .catch(erro => console.error(erro))
+
     }
 
     const [productData,setProductData] = useState([])
