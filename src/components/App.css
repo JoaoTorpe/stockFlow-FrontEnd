@@ -11,7 +11,9 @@ box-sizing: border-box;
     justify-content: center;
     align-items: flex-end;
 }
-
+a{
+    text-decoration: none;
+}
 section{
 display: flex;
 justify-content: center;
