@@ -1,16 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import "./Product.css"
 import axios from 'axios'
-import ProductLabel from '../components/ProductLabel'
 import { json } from 'react-router-dom'
+import "../components/ProductLabel.css"
 
-function generateLabel(props){
-
- return <ProductLabel name={props.name} price={props.price} quantity={props.quantity} category={props.category} supllier={props.supplie} totalValue={props.quantity * props.price} />
-}
 
 const Product = () => {
 
+  function generateLabel(props){
+    //return <ProductLabel name={props.name} price={props.price} quantity={props.quantity} category={props.category} supllier={props.supplie} totalValue={props.quantity * props.price} />
+        return <table>
+        <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Category</th>
+        <th>Supllier</th>
+        <th>Total value</th>
+        <th> <button className='editBtn Btn' >Edit</button></th>
+        </tr>
+        <tr>
+          <td>{props.name}</td>
+          <td>{props.price}</td>
+          <td>{props.quantity}</td>
+          <td>{props.category}</td>
+          <td>{props.supplie ? props.supplie : 'N/A' }</td>
+          <td>{"R$ "+props.quantity * props.price}</td>
+          <th> <button className='delBtn Btn ' >Delete</button></th>
+          </tr>
+    
+    </table>
+    }
 
     const [productData,setProductData] = useState([])
 

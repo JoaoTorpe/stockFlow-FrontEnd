@@ -1,28 +1,46 @@
-.label{
-    background-color:#D9D9D9;
-    width: 900px;
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.label ul{
-display: flex;
-gap: 1rem;
-width: 100%;
+table {
+    
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin:auto;
+    border: 1px solid #ccc;
+       
+  }
+  
 
-}
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    text-align: center;
 
-.label ul li{
-list-style: none;
-}
+  }
+  
 
-button:hover{
-cursor: pointer;
-}
+  th {
+    background-color: #f2f2f2;
+  }
+  
 
-.btnContainer{
-    position: relative;
-    left: 50px;
-}
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+ 
+
+
+  .Btn{
+        width: 60px;
+        color: gray;
+        border: 1px solid #ccc;
+        border-radius:5px ;
+  }
+
+  .Btn:hover{
+        color: black;
+        cursor: pointer;
+  }
+
+  
