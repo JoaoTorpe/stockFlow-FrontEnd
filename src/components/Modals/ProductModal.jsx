@@ -1,9 +1,32 @@
 import React, { useState } from 'react';
 import './Modal.css'; 
+import axios from 'axios';
 
 function ProductModal({isOpen,setopenModal}) {
-  
 
+  const [productObj,setProductObj] = useState( {
+    name:'',
+    category:'',
+    price:'',
+    quantity:''
+
+  })
+
+      function setName(newName){
+          setProductObj({...productObj,name:newName})
+      }
+      function setCategory(newCategory){
+        setProductObj({...productObj,category:newCategory})
+    }
+    function setPrice(newPrice){
+      setProductObj({...productObj,price:newPrice})
+    }
+    function setQuant(newQuant){
+      setProductObj({...productObj,quantity:newQuant})
+    }
+    function setSupllier(newSup){
+      setProductObj({...productObj,sup:newQuant})
+    }
     const closeModal = () => {
         setopenModal(false); 
       };
@@ -11,6 +34,11 @@ function ProductModal({isOpen,setopenModal}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     closeModal(); 
+
+      axios.post("http://localhost:8080/products",productObj)
+      .catch((err)=> console.error(err))
+
+
   };
 if(isOpen){
   return (
@@ -24,19 +52,19 @@ if(isOpen){
             <h2>Adicionar Produto</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="name">Nome:</label>
-              <input type="text" id="name" name="name" required />
+              <input type="text" id="name" name="name" required onChange={(event)=>setName(event.target.value)} />
 
               <label htmlFor="price">Preço:</label>
-              <input type="number" id="price" name="price" required />
+              <input type="number" id="price" name="price" required onChange={(event)=>setPrice(event.target.value)} />
 
               <label htmlFor="quantity">Quantidade:</label>
-              <input type="number" id="quantity" name="quantity" required />
+              <input type="number" id="quantity" name="quantity" required onChange={(event)=>setQuant(event.target.value)}  />
 
               <label htmlFor="category">Categoria:</label>
-              <input type="text" id="category" name="category" required />
+              <input type="text" id="category" name="category" required onChange={(event)=>setCategory(event.target.value)}  />
 
               <label htmlFor="supplier">Fornecedor:</label>
-              <input type="text" id="supplier" name="supplier" required />
+              <input type="text" id="supplier" name="supplier"/>
 
               <button className='modalBtn' type="submit">Salvar</button>
             </form>
