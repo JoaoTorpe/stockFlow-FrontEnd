@@ -32,7 +32,7 @@ function ProductModal({isOpen,setopenModal}) {
       };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+   
     closeModal(); 
 
       axios.post("http://localhost:8080/products",productObj)

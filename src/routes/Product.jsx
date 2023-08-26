@@ -4,10 +4,35 @@ import axios from 'axios'
 import { json } from 'react-router-dom'
 import "../components/ProductLabel.css"
 import ProductModal from '../components/Modals/ProductModal'
-
+import EditProductModal from '../components/Modals/EditProductModal'
 const Product = () => {
 
+  const [editIsOpen, setEditOpen] = useState(false);
+  const [editProps, setEditProps] = useState({
+    name: '',
+    category: '',
+    price: '',
+    quantity: '',
+    id: ''
+  });
+
+  
+
+  function handleEditClick(props) {
+    setEditProps({
+      name: props.name,
+      category: props.category,
+      price: props.price,
+      quantity: props.quantity,
+      id: props.id
+    });
+    setEditOpen(true);
+  }
+
   function generateLabel(props){
+
+    
+
         return <table>
         <tr>
         <th>Name</th>
@@ -16,7 +41,7 @@ const Product = () => {
         <th>Category</th>
         <th>Supllier</th>
         <th>Total value</th>
-        <th> <button className='editBtn Btn' >Edit</button></th>
+        <th> <button onClick={()=>handleEditClick(props)} className='editBtn Btn'>Edit</button></th>
         </tr>
         <tr>
           <td>{props.name}</td>
@@ -58,6 +83,7 @@ catch (error) {
       { productData.map((p)=>generateLabel(p)) }
       <button onClick={()=>setModal(true)}  className='addModal'>+</button>
       <ProductModal isOpen ={isOpen} setopenModal={()=>setModal(!isOpen)}/>
+      <EditProductModal editProps={editProps} isOpen ={editIsOpen} setopenModal={()=>setEditOpen(!editIsOpen)}  />
     </div>
   )
 }
