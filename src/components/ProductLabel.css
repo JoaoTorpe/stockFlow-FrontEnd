@@ -1,6 +1,7 @@
 
 
 
+
 table {
     
     border-collapse: collapse;
@@ -55,3 +56,5 @@ table {
   .addModal:hover{
     cursor: pointer;
   }
+
+  

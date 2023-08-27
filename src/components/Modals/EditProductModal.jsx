@@ -60,22 +60,22 @@ if(isOpen){
             <span className="close" onClick={setopenModal}>&times;</span>
             <h2>Editar Produto</h2>
             <form onSubmit={handleSubmit}>
-              <label htmlFor="name">Nome:</label>
-              <input type="text" id="name" name="name" value={productObj.name} required onChange={(event)=>setName(event.target.value)} />
+              <label htmlFor="name">Name:</label>
+              <input type="text" id="name" name="name" value={productObj.name} required onChange={(event)=>setName(event.target.value)} autoComplete='off' />
 
-              <label htmlFor="price">Preço:</label>
+              <label htmlFor="price">Price:</label>
               <input type="number" id="price" name="price" value={productObj.price}  required onChange={(event)=>setPrice(event.target.value)} />
 
-              <label htmlFor="quantity">Quantidade:</label>
+              <label htmlFor="quantity">Quantity:</label>
               <input type="number" id="quantity" name="quantity" value={productObj.quantity}  required onChange={(event)=>setQuant(event.target.value)}  />
 
-              <label htmlFor="category">Categoria:</label>
-              <input type="text" id="category" name="category" value={productObj.category}  required onChange={(event)=>setCategory(event.target.value)}  />
+              <label htmlFor="category">Category:</label>
+              <input type="text" id="category" name="category" value={productObj.category}  required onChange={(event)=>setCategory(event.target.value)}autoComplete='off' />
 
-              <label htmlFor="supplier">Fornecedor:</label>
-              <input type="text" id="supplier" name="supplier"/>
+              <label htmlFor="supplier">Supllier:</label>
+              <input type="text" id="supplier" name="supplier" autoComplete='off' />
 
-              <button className='modalBtn' type="submit">Editar</button>
+              <button className='modalBtn' type="submit">Edit</button>
             </form>
           </div>
         </div>

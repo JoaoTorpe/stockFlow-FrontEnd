@@ -81,6 +81,7 @@ catch (error) {
   return (
     <div className='productContainer'>
       { productData.map((p)=>generateLabel(p)) }
+      
       <button onClick={()=>setModal(true)}  className='addModal'>+</button>
       <ProductModal isOpen ={isOpen} setopenModal={()=>setModal(!isOpen)}/>
       <EditProductModal editProps={editProps} isOpen ={editIsOpen} setopenModal={()=>setEditOpen(!editIsOpen)}  />
