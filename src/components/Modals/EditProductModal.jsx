@@ -58,7 +58,7 @@ if(isOpen){
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={setopenModal}>&times;</span>
-            <h2>Editar Produto</h2>
+            <h2>Edit Product</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="name">Name:</label>
               <input type="text" id="name" name="name" value={productObj.name} required onChange={(event)=>setName(event.target.value)} autoComplete='off' />

@@ -3,11 +3,31 @@ import '../components/ProductLabel.css'
 import {json} from 'react-router-dom'
 import axios from 'axios'
 import SupllierModal from '../components/Modals/SupllierModal'
+import EditSupllierModal from '../components/Modals/EditSupllierModal'
 const Supllier = () => {
-  
+
+  const [editIsOpen, setEditOpen] = useState(false);
+    const [editProps, setEditProps] = useState({
+      id:null,
+      name:'',
+    phone:'',
+    email:''
+    });
   function generatLabel(props){
 
     
+  
+    
+  
+    function handleEditClick(props) {
+      setEditProps({
+        id: props.id,
+        name:props.name,
+        phone:props.phone,
+        email:props.email
+      });
+      setEditOpen(true);
+    }
 
     return <table>
     <tr>
@@ -30,9 +50,11 @@ const Supllier = () => {
 }
 
 function deleteItem(id){
-  axios.delete("http://localhost:8080/splliers/"+id)
+  axios.delete("http://localhost:8080/suplliers/"+id)
   .catch(erro => console.error(erro))
 }
+
+
 
 const [supllierData,setSupllierData] = useState([])
 
@@ -57,7 +79,8 @@ const [isOpen,setModal] = useState(false);
     <div className='productContainer'  >
      <button onClick={()=>setModal(true)}  className='addModal'>+</button>
   {supllierData.map((p)=> generatLabel(p))}
-    <SupllierModal isOpen={isOpen} setopenModal={()=>setModal(!isOpen)}   />
+    <SupllierModal isOpen={isOpen} setopenModal={()=>setModal(!isOpen)}/>
+    <EditSupllierModal  editProps={editProps} isOpen ={editIsOpen} setopenModal={()=>setEditOpen(!editIsOpen)}  />
     </div>
   )
 }
