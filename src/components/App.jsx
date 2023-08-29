@@ -11,8 +11,8 @@ return <div>
     <Link to="/insights">
     <Button Name="Insights"/>
 </Link>
-<Link to="/supllier" >
-    <Button Name="Suplliers"/>
+<Link to="/supplier" >
+    <Button Name="Suppliers"/>
     </Link>
 </div>
 

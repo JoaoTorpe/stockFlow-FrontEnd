@@ -17,7 +17,7 @@ const router =  createBrowserRouter([
   element: <Insights/>
   },
   {
-    path: "/supllier",
+    path: "/supplier",
     element: <Supllier/>
     }
   ]

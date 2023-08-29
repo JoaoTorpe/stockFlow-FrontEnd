@@ -14,11 +14,6 @@ const Supllier = () => {
     email:''
     });
   function generatLabel(props){
-
-    
-  
-    
-  
     function handleEditClick(props) {
       setEditProps({
         id: props.id,

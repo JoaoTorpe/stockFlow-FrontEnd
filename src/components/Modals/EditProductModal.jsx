@@ -72,7 +72,7 @@ if(isOpen){
               <label htmlFor="category">Category:</label>
               <input type="text" id="category" name="category" value={productObj.category}  required onChange={(event)=>setCategory(event.target.value)}autoComplete='off' />
 
-              <label htmlFor="supplier">Supllier:</label>
+              <label htmlFor="supplier">Supplier:</label>
               <input type="text" id="supplier" name="supplier" autoComplete='off' />
 
               <button className='modalBtn' type="submit">Edit</button>

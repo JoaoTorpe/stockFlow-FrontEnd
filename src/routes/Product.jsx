@@ -39,7 +39,7 @@ const Product = () => {
         <th>Price</th>
         <th>Quantity</th>
         <th>Category</th>
-        <th>Supllier</th>
+        <th>Supplier</th>
         <th>Total value</th>
         <th> <button onClick={()=>handleEditClick(props)} className='editBtn Btn'>Edit</button></th>
         </tr>
