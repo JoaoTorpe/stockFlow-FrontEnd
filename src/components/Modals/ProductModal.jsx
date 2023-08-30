@@ -2,31 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './Modal.css'; 
 import axios from 'axios';
 
-function ProductModal({isOpen,setopenModal}) {
+function ProductModal({entityId,isOpen,setopenModal}) {
 
   const [productObj,setProductObj] = useState( [])
 
- const [supplierSet, setSupplierSet] = useState(new Set());
-
-  async function getSupllierData(){
-    try{
-      const  Data = await axios.get("http://localhost:8080/suplliers")
-      
-      const supplierData = Data.data
-       setSupplierSet(new Set(supplierData))
-    }
-    catch (error) {
-    console.error(error);
-    }
-  }
-
  
-  
-  useEffect( ()=>{
-    getSupllierData();
-
-  },[isOpen])
-
       function setName(newName){
           setProductObj({...productObj,name:newName})
       }
@@ -55,8 +35,13 @@ function ProductModal({isOpen,setopenModal}) {
       axios.post("http://localhost:8080/products",productObj)
       .catch((err)=> console.error(err))
 
+      mergeEntities();
+      
   };
+
+  
 if(isOpen){
+
   return (
     <div>
       
@@ -79,16 +64,9 @@ if(isOpen){
               <label htmlFor="category">Category:</label>
               <input type="text" id="category" name="category" required onChange={(event)=>setCategory(event.target.value)} autoComplete='off' />
 
-              <label htmlFor="supplier">Supplier:</label>
-              <select type="text" id="supplier" name="supplier" >
-              <option key="key" value="valor"> 
-               Select an option
-              </option>
-              {Array.from(supplierSet).map((setItem)=>{
-                  return <option key={setItem.id} value={setItem.name}>{setItem.name}</option>
-              })}
+              
 
-              </select>
+
               <button className='modalBtn' type="submit">Save</button>
             </form>
           </div>

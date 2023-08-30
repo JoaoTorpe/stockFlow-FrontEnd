@@ -6,7 +6,7 @@ import "../components/ProductLabel.css"
 import ProductModal from '../components/Modals/ProductModal'
 import EditProductModal from '../components/Modals/EditProductModal'
 const Product = () => {
-
+  const [id,setId] = useState('')
   const [editIsOpen, setEditOpen] = useState(false);
   const [editProps, setEditProps] = useState({
     name: '',
@@ -19,6 +19,8 @@ const Product = () => {
   
 
   function handleEditClick(props) {
+
+
     setEditProps({
       name: props.name,
       category: props.category,
@@ -30,9 +32,10 @@ const Product = () => {
   }
 
   function generateLabel(props){
-
-    
-
+    let SupName = 'N/A'
+      if(props.supllie != null  ){
+     SupName= props.supllie.name
+      }
         return <table>
         <tr>
         <th>Name</th>
@@ -48,9 +51,10 @@ const Product = () => {
           <td>{"R$ "+props.price}</td>
           <td>{props.quantity}</td>
           <td>{props.category}</td>
-          <td>{props.supplie ? props.supplie : 'N/A' }</td>
+          <td>{SupName}</td>
+          
           <td>{"R$ "+props.quantity * props.price}</td>
-          <th> <button onClick={(event)=>deleteItem(props.id)}  className='delBtn Btn'>Delete</button></th>
+          <th> <button onClick={()=>deleteItem(props.id)}  className='delBtn Btn'>Delete</button></th>
           </tr>
     
     </table>
@@ -83,7 +87,7 @@ catch (error) {
       { productData.map((p)=>generateLabel(p)) }
       
       <button onClick={()=>setModal(true)}  className='addModal'>+</button>
-      <ProductModal isOpen ={isOpen} setopenModal={()=>setModal(!isOpen)}/>
+      <ProductModal entityId={id} isOpen ={isOpen} setopenModal={()=>setModal(!isOpen)}/>
       <EditProductModal editProps={editProps} isOpen ={editIsOpen} setopenModal={()=>setEditOpen(!editIsOpen)}  />
     </div>
   )
