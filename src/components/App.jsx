@@ -2,7 +2,7 @@ import React from "react"
 import "./App.css"
 import {Button}  from "./Button"
 import {Link, Outlet} from "react-router-dom"
-export function App(){
+function App(){
 return <div>
 <div className="appTopBar">
     <Link to="/products" >
@@ -21,3 +21,5 @@ return <div>
 </div>
 
 }
+
+export default App

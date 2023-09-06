@@ -2,7 +2,6 @@ import React from 'react';
 
 function ProdList({ isListOpen, setListOpen, listData }) {
   const modalStyle = {
-   
     position: 'fixed',
     top: '0',
     left: '0',
@@ -14,6 +13,7 @@ function ProdList({ isListOpen, setListOpen, listData }) {
   };
 
   const modalContentStyle = {
+  
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -26,7 +26,7 @@ function ProdList({ isListOpen, setListOpen, listData }) {
     alignItems:'center',
     justifyContent:'center',
     flexDirection:'column',
-    gap:'30px'
+
   };
 
   const buttonStyle = {
@@ -50,7 +50,7 @@ function ProdList({ isListOpen, setListOpen, listData }) {
       <div style={modalStyle}>
    
         <div style={modalContentStyle}>
-        <h3>Supplier's products</h3>
+        <h3 style={{marginBottom:'35px'}} >Supplier's products</h3>
           <button onClick={() => setListOpen(false)} style={buttonStyle}>
           x
           </button>

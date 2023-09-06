@@ -1,0 +1,33 @@
+
+.section{
+    position: absolute;
+    top: 35%;
+    height: 400px;   
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.smallContainer{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.largeBox{
+    width: 520px;
+    height: 200px;
+    background-color: #32CA93;
+    border-radius:20px ;
+}
+
+.smallBox{
+            border-radius: 10px;
+        width: 250px;
+        height: 150px;
+    background-color: #32CA93;
+}

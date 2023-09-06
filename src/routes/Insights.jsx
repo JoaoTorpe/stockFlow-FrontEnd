@@ -1,7 +1,22 @@
 import React from 'react'
+import "./Insights.css"
+ function Insights () {
+  
 
-export const Insights = () => {
+
+  
   return (
-    <div>  </div>
-  )
+    <div className='section'>
+          <div className='smallContainer' > 
+        <div className='smallBox' ></div>
+        <div className='smallBox' ></div>
+</div>
+
+
+        <div className='largeBox' ></div>
+    
+      </div>
+  );
 }
+
+export default Insights
